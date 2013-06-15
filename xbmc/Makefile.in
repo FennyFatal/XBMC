@@ -28,6 +28,7 @@ SRCS=Application.cpp \
      ThumbnailCache.cpp \
      URL.cpp \
      Util.cpp \
+     RecUtils.cpp \
      XBApplicationEx.cpp \
      XBDateTime.cpp \
      xbmc.cpp \

@@ -25,6 +25,7 @@
 #include "interfaces/Builtins.h"
 #include "utils/Variant.h"
 #include "utils/Splash.h"
+#include "RecUtils.h"
 #include "LangInfo.h"
 #include "utils/Screenshot.h"
 #include "Util.h"
@@ -2691,6 +2692,8 @@ bool CApplication::OnAction(const CAction &action)
         volume -= (float)fabs(action.GetAmount()) * action.GetAmount() * step;
       SetVolume(volume, false);
     }
+    if (m_pPlayer && m_pPlayer->IsPassthrough())
+        RecUtils::doRecVolumeChange(action.GetID());
     // show visual feedback of volume change...
     ShowVolumeBar(&action);
     return true;
