@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 import telnetlib
 import os
@@ -37,7 +38,7 @@ class Main:
         	else:
                 	print "File is there but the program is not running"
                 	print "Removing lock file for the: %s as it can be there because of the program last time it was run" % old_pd
-                	os.remove(os.path.expanduser("~/.lockfile.vestibular.lock"))
+                	os.remove(os.path.expanduser(PIDFILE))
 
 	#This is part of code where we put a PID file in the lock file
 	pidfile = open(os.path.expanduser(PIDFILE), "w")

@@ -29,19 +29,10 @@ void RecUtils::doRecVolumeDown()
 
 void RecUtils::sendCommand(const char *command)
 	{
-		char result[100];
-		strcpy(result,"python Pioneer.py ");
-		strcat(result,command);
-		strcat(result," &");
-		FILE * f = popen( result , "r" );
-    		if ( f == 0 ) {
-    			fprintf( stderr, "Could not execute\n" );
-    			return;
-    		}
-    		const int BUFSIZE = 1000;
-    		char buf[ BUFSIZE ];
-    		while( fgets( buf, BUFSIZE,  f ) ) {
-    			//fprintf( stdout, "%s", buf  );
-    		}
-    		pclose( f );
+        char result[100];
+        strcpy(result,"Pioneer.py ");
+        strcat(result,command);
+        strcat(result," &");
+        FILE * f = popen( result , "r" );
+        return;
 	}
